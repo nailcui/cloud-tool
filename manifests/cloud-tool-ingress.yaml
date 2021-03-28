@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: cloud-tool-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    # 开启use-regex，启用path的正则匹配
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    # 定义域名
+    - host: ct.baidu.com
+      http:
+        paths:
+        # 不同path转发到不同端口
+          - path: /
+            backend:
+              serviceName: cloud-tool
+              servicePort: 80

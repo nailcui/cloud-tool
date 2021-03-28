@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloud-tool-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: cloud-tool
+  ports:
+    - port: 80
+      targetPort: 80
