@@ -12,7 +12,7 @@ func InitRouter() *gin.Engine {
 
 	{
 		r.GET("/", api.Root)
-		r.GET("/ip", api.GetIp)
+		r.GET("/hostname", api.GetHostname)
 		r.GET("/get", api.GetInfo)
 		r.POST("/post", api.PostInfo)
 		r.GET("/exit", api.Exit)

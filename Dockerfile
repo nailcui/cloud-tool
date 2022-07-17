@@ -1,7 +1,10 @@
-FROM golang:alpine
-
+FROM golang:1.16-alpine AS builder
 WORKDIR /build
-COPY cloud-tool .
+COPY . /build
+RUN GOPROXY=https://goproxy.cn CGO_ENABLED=0 go build -ldflags="-w -s"
 
+FROM alpine AS runner
+WORKDIR /build
+COPY --from=builder /build/cloud-tool .
 EXPOSE 80
-CMD ["/build/cloud-tool"]
+CMD ["./cloud-tool"]

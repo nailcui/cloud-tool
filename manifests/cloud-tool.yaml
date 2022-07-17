@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: cloud-tool
-          image: cloud-tool:0.1
+          image: cloud-tool:0.1.1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

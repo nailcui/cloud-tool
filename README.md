@@ -53,10 +53,11 @@ curl http://localhost/exit
 #### developing
 
 ```shell
-# 打包
-./build.sh
+# 打镜像
 
-# push镜像
-docker login
-docker push naildocker/cloud-tool:0.1
+docker build . -t naildocker/cloud-tool:0.1.1
+
+# 推送远程
+# 在自己电脑上第一次可能需要 docker login
+docker push naildocker/cloud-tool:0.1.1
 ```
