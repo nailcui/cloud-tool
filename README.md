@@ -61,3 +61,9 @@ docker build . -t naildocker/cloud-tool:0.1.1
 # 在自己电脑上第一次可能需要 docker login
 docker push naildocker/cloud-tool:0.1.1
 ```
+
+#### roadmap
+
+| version | desc |
+| --- | --- |
+| 0.1.2 | add os.signal listener |

@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	go processSignal()
 	routersInit := routers.InitRouter()
 	server := &http.Server{
 		Addr:           ":80",
