@@ -16,7 +16,14 @@ spec:
     spec:
       containers:
         - name: cloud-tool
-          image: cloud-tool:0.1.1
+          image: cloud-tool:0.1.3
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
+          resources:
+            limits:
+              cpu: "1"
+              memory: 500Mi
+            requests:
+              cpu: 500m
+              memory: 10Mi

@@ -44,6 +44,16 @@ curl http://localhost/memory/release
 
 ```
 
+#### cpu
+```
+# 占满 cpu
+curl http://localhost/cpu/alloc?limit=10000
+
+# 取消 占满 cpu
+curl http://localhost/cpu/release
+
+```
+
 #### other
 ```
 # 进程退出，code=1
@@ -55,11 +65,11 @@ curl http://localhost/exit
 ```shell
 # 打镜像
 
-docker build . -t naildocker/cloud-tool:0.1.1
+docker build . -t naildocker/cloud-tool:0.1.5
 
 # 推送远程
 # 在自己电脑上第一次可能需要 docker login
-docker push naildocker/cloud-tool:0.1.1
+docker push naildocker/cloud-tool:0.1.5
 ```
 
 #### roadmap
@@ -67,3 +77,5 @@ docker push naildocker/cloud-tool:0.1.1
 | version | desc |
 | --- | --- |
 | 0.1.2 | add os.signal listener |
+| 0.1.3 | add os.signal listener |
+| 0.1.4 | add cpu alloc |

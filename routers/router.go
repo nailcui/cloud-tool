@@ -29,5 +29,10 @@ func InitRouter() *gin.Engine {
 		r.GET("/memory/release", api.MemoryRelease)
 	}
 
+	{
+		r.GET("/cpu/alloc", api.CpuAlloc)
+		r.GET("/cpu/release", api.CpuRelease)
+	}
+
 	return r
 }
